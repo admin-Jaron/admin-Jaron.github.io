@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-flat-top.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tryhub.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="在右上角或者左上角实现fork me on github点击 GitHub Corners 或者 点击 GitHub Ribbons 挑选自己喜欢的样式，并复制代码。 然后粘贴刚才复制的代码到 themes&#x2F;Hexo主题文件夹&#x2F;layout&#x2F;导航栏定义文件 的文件中(代码放置位置自行调节)，例如 Next主题 位于 themes&#x2F;next&#x2F;layout&#x2F;_layout.swig 并把href改为你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Next主题个性化教程">
+<meta property="og:url" content="https://tryhub.top/2017/04/05/Theme-of-personalized/index.html">
+<meta property="og:site_name" content="奇姆的博客">
+<meta property="og:description" content="在右上角或者左上角实现fork me on github点击 GitHub Corners 或者 点击 GitHub Ribbons 挑选自己喜欢的样式，并复制代码。 然后粘贴刚才复制的代码到 themes&#x2F;Hexo主题文件夹&#x2F;layout&#x2F;导航栏定义文件 的文件中(代码放置位置自行调节)，例如 Next主题 位于 themes&#x2F;next&#x2F;layout&#x2F;_layout.swig 并把href改为你">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-04-05T03:36:07.000Z">
+<meta property="article:modified_time" content="2023-07-07T07:26:54.320Z">
+<meta property="article:author" content="Jaron Chim">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="搭建博客">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tryhub.top/2017/04/05/Theme-of-personalized/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tryhub.top/2017/04/05/Theme-of-personalized/","path":"2017/04/05/Theme-of-personalized/","title":"Next主题个性化教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Next主题个性化教程 | 奇姆的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?1ad13b7aff8bfe9206fa7e12d5c4a4f0"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/bookmark.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">奇姆的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%8F%B3%E4%B8%8A%E8%A7%92%E6%88%96%E8%80%85%E5%B7%A6%E4%B8%8A%E8%A7%92%E5%AE%9E%E7%8E%B0fork-me-on-github"><span class="nav-number">1.</span> <span class="nav-text">在右上角或者左上角实现fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-README-md-%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">添加 README.md 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%A4%BE%E4%BA%A4%E5%B0%8F%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">侧边栏社交小图标设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E5%8A%A0%E4%B8%8A%E8%AE%BF%E9%97%AE%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">在网站底部加上访问量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E8%BF%99%E9%87%8C%E6%9C%89%E4%B8%A4%E4%B8%AD%E4%B8%8D%E5%90%8C%E8%AE%A1%E7%AE%97%E6%96%B9%E5%BC%8F%E7%9A%84%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">4.1.</span> <span class="nav-text">在这里有两中不同计算方式的统计代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pv%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%8D%95%E4%B8%AA%E7%94%A8%E6%88%B7%E8%BF%9E%E7%BB%AD%E7%82%B9%E5%87%BBn%E7%AF%87%E6%96%87%E7%AB%A0%EF%BC%8C%E8%AE%B0%E5%BD%95n%E6%AC%A1%E8%AE%BF%E9%97%AE%E9%87%8F"><span class="nav-number">4.1.1.</span> <span class="nav-text">pv的方式，单个用户连续点击n篇文章，记录n次访问量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uv%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%8D%95%E4%B8%AA%E7%94%A8%E6%88%B7%E8%BF%9E%E7%BB%AD%E7%82%B9%E5%87%BBn%E7%AF%87%E6%96%87%E7%AB%A0%EF%BC%8C%E5%8F%AA%E8%AE%B0%E5%BD%951%E6%AC%A1%E8%AE%BF%E5%AE%A2%E6%95%B0"><span class="nav-number">4.1.2.</span> <span class="nav-text">uv的方式，单个用户连续点击n篇文章，只记录1次访客数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">网站底部字数统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">实现统计功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%AC%A1-hexo-new-%E2%80%9CMy-New-Post%E2%80%9D-%E7%94%9F%E6%88%90%E9%BB%98%E8%AE%A4%E7%9A%84md%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">每次 hexo new “My New Post” 生成默认的md文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%BD%91%E9%A1%B5%E5%BA%95%E9%83%A8powered-By-Hexo-%E5%BC%BA%E5%8A%9B%E9%A9%B1%E5%8A%A8"><span class="nav-number">8.</span> <span class="nav-text">隐藏网页底部powered By Hexo &#x2F; 强力驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E8%AE%BF%E9%97%AE"><span class="nav-number">9.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%BC%A0%E6%A0%87%E6%A0%B7%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E7%88%86%E7%82%B8%E6%95%88%E6%9E%9C"><span class="nav-number">11.</span> <span class="nav-text">点击爆炸效果</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jaron Chim"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Jaron Chim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">144</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/admin-Jaron" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;admin-Jaron" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tryhub@tryhub.cn" title="E-Mail → mailto:tryhub@tryhub.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tryhub.top/2017/04/05/Theme-of-personalized/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jaron Chim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奇姆的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Next主题个性化教程 | 奇姆的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Next主题个性化教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-04-05 11:36:07" itemprop="dateCreated datePublished" datetime="2017-04-05T11:36:07+08:00">2017-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-07 15:26:54" itemprop="dateModified" datetime="2023-07-07T15:26:54+08:00">2023-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo/next/" itemprop="url" rel="index"><span itemprop="name">next</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="在右上角或者左上角实现fork-me-on-github"><a href="#在右上角或者左上角实现fork-me-on-github" class="headerlink" title="在右上角或者左上角实现fork me on github"></a>在右上角或者左上角实现fork me on github</h2><p><a target="_blank" rel="noopener" href="http://tholman.com/github-corners/">点击 GitHub Corners</a> 或者 <a target="_blank" rel="noopener" href="https://blog.github.com/2008-12-19-github-ribbons/">点击 GitHub Ribbons</a> 挑选自己喜欢的样式，并复制代码。</p>
+<p>然后粘贴刚才复制的代码到 <code>themes/Hexo主题文件夹/layout/导航栏定义文件</code> 的文件中(代码放置位置自行调节)，例如 <code>Next主题</code> 位于 <code>themes/next/layout/_layout.swig</code> 并把href改为你的GitHub地址</p>
+<span id="more"></span>
+
+<h2 id="添加-README-md-文件"><a href="#添加-README-md-文件" class="headerlink" title="添加 README.md 文件"></a>添加 README.md 文件</h2><p>每个项目下一般都有一个 <code>README.md</code> 文件，但是使用 <code>Hexo</code> 部署到仓库后，项目下是没有 <code>README.md</code> 文件的。</p>
+<p>在 <code>Hexo</code> 目录下的 <code>source</code> 根目录下添加一个 <code>README.md</code> 文件，修改站点配置文件 <code>_config.yml</code> 将 <code>skip_render</code> 参数的值设置为</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">README.md</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="侧边栏社交小图标设置"><a href="#侧边栏社交小图标设置" class="headerlink" title="侧边栏社交小图标设置"></a>侧边栏社交小图标设置</h2><p>打开主题配置文件 <code>_config.yml</code> 搜索 <code>social_icons:</code> 在<a target="_blank" rel="noopener" href="https://fontawesome.com/icons">图标库</a>找自己喜欢的小图标，并将名字复制到对应的键值对</p>
+<h2 id="在网站底部加上访问量"><a href="#在网站底部加上访问量" class="headerlink" title="在网站底部加上访问量"></a>在网站底部加上访问量</h2><p>打开 <code>\themes\next\layout\_partials\footer.swig</code> 文件,在copyright前加上：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后在合适的位置添加显示统计的代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user-md&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">本站访客数:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="在这里有两中不同计算方式的统计代码"><a href="#在这里有两中不同计算方式的统计代码" class="headerlink" title="在这里有两中不同计算方式的统计代码"></a>在这里有两中不同计算方式的统计代码</h3><h4 id="pv的方式，单个用户连续点击n篇文章，记录n次访问量"><a href="#pv的方式，单个用户连续点击n篇文章，记录n次访问量" class="headerlink" title="pv的方式，单个用户连续点击n篇文章，记录n次访问量"></a>pv的方式，单个用户连续点击n篇文章，记录n次访问量</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">    本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="uv的方式，单个用户连续点击n篇文章，只记录1次访客数"><a href="#uv的方式，单个用户连续点击n篇文章，只记录1次访客数" class="headerlink" title="uv的方式，单个用户连续点击n篇文章，只记录1次访客数"></a>uv的方式，单个用户连续点击n篇文章，只记录1次访客数</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">  本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>添加之后再执行 <code>hexo d -g</code> 然后再刷新页面就能看到效果</p>
+<h2 id="网站底部字数统计"><a href="#网站底部字数统计" class="headerlink" title="网站底部字数统计"></a>网站底部字数统计</h2><p>切换到根目录下，然后运行如下代码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>/themes/next/layout/_partials/footer.swig</code> 文件尾部加上：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;theme-info&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-count&quot;</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现统计功能"><a href="#实现统计功能" class="headerlink" title="实现统计功能"></a>实现统计功能</h2><p>在根目录下安装 <code>hexo-wordcount</code> 运行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题的配置文件中，配置如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">wordcount:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="每次-hexo-new-“My-New-Post”-生成默认的md文件格式"><a href="#每次-hexo-new-“My-New-Post”-生成默认的md文件格式" class="headerlink" title="每次 hexo new “My New Post” 生成默认的md文件格式"></a>每次 hexo new “My New Post” 生成默认的md文件格式</h2><p>在 <code>/scaffolds/post.md</code> 文件中修改默认格式</p>
+<h2 id="隐藏网页底部powered-By-Hexo-强力驱动"><a href="#隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="隐藏网页底部powered By Hexo &#x2F; 强力驱动"></a>隐藏网页底部powered By Hexo &#x2F; 强力驱动</h2><p>打开 <code>themes/next/layout/_partials/footer.swig</code> 使用 <code>&lt;!-- --&gt;</code> 隐藏之间的代码即可，或者直接删除</p>
+<h2 id="文章加密访问"><a href="#文章加密访问" class="headerlink" title="文章加密访问"></a>文章加密访问</h2><p>打开 <code>themes/next/layout/_partials/head.swig</code> 文件，在以下位置插入这样一段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    (<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&#x27;&#123;&#123; page.password &#125;&#125;&#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="title function_">prompt</span>(<span class="string">&#x27;请输入访问密码&#x27;</span>) !== <span class="string">&#x27;&#123;&#123; page.password &#125;&#125;&#x27;</span>)&#123;</span><br><span class="line">                <span class="title function_">alert</span>(<span class="string">&#x27;访问失败&#x27;</span>);</span><br><span class="line">                history.<span class="title function_">back</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后在文章上定义键值对密码</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">标签</span></span><br><span class="line"><span class="attr">category:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">分类</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">password</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h2><p>打开 <code>themes/next/source/css/_custom/custom.styl</code> 在里面写下如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 鼠标样式</span><br><span class="line">  * &#123;</span><br><span class="line">      <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;</span>),auto<span class="meta">!important</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">      <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;</span>),auto<span class="meta">!important</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>url</code> 里面必须是 <code>ico</code> 图片，ico 图片可以上传到网上</p>
+<h2 id="点击爆炸效果"><a href="#点击爆炸效果" class="headerlink" title="点击爆炸效果"></a>点击爆炸效果</h2><p>首先在 <code>themes/next/source/js/src</code> 里面建一个叫 <code>fireworks.js</code> 的文件，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updateCoords</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    pointerX = (e.<span class="property">clientX</span> || e.<span class="property">touches</span>[<span class="number">0</span>].<span class="property">clientX</span>) - canvasEl.<span class="title function_">getBoundingClientRect</span>().<span class="property">left</span>, pointerY = e.<span class="property">clientY</span> || e.<span class="property">touches</span>[<span class="number">0</span>].<span class="property">clientY</span> - canvasEl.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setParticuleDirection</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> t = anime.<span class="title function_">random</span>(<span class="number">0</span>, <span class="number">360</span>) * <span class="title class_">Math</span>.<span class="property">PI</span> / <span class="number">180</span>, a = anime.<span class="title function_">random</span>(<span class="number">50</span>, <span class="number">180</span>), n = [-<span class="number">1</span>, <span class="number">1</span>][anime.<span class="title function_">random</span>(<span class="number">0</span>, <span class="number">1</span>)] * a;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">x</span>: e.<span class="property">x</span> + n * <span class="title class_">Math</span>.<span class="title function_">cos</span>(t), <span class="attr">y</span>: e.<span class="property">y</span> + n * <span class="title class_">Math</span>.<span class="title function_">sin</span>(t)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createParticule</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.<span class="property">x</span> = e, a.<span class="property">y</span> = t, a.<span class="property">color</span> = colors[anime.<span class="title function_">random</span>(<span class="number">0</span>, colors.<span class="property">length</span> - <span class="number">1</span>)], a.<span class="property">radius</span> = anime.<span class="title function_">random</span>(<span class="number">16</span>, <span class="number">32</span>), a.<span class="property">endPos</span> = <span class="title function_">setParticuleDirection</span>(a), a.<span class="property">draw</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">beginPath</span>(), ctx.<span class="title function_">arc</span>(a.<span class="property">x</span>, a.<span class="property">y</span>, a.<span class="property">radius</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>, !<span class="number">0</span>), ctx.<span class="property">fillStyle</span> = a.<span class="property">color</span>, ctx.<span class="title function_">fill</span>()</span><br><span class="line">    &#125;, a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createCircle</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.<span class="property">x</span> = e, a.<span class="property">y</span> = t, a.<span class="property">color</span> = <span class="string">&quot;#F00&quot;</span>, a.<span class="property">radius</span> = <span class="number">0.1</span>, a.<span class="property">alpha</span> = <span class="number">0.5</span>, a.<span class="property">lineWidth</span> = <span class="number">6</span>, a.<span class="property">draw</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="property">globalAlpha</span> = a.<span class="property">alpha</span>, ctx.<span class="title function_">beginPath</span>(), ctx.<span class="title function_">arc</span>(a.<span class="property">x</span>, a.<span class="property">y</span>, a.<span class="property">radius</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>, !<span class="number">0</span>), ctx.<span class="property">lineWidth</span> = a.<span class="property">lineWidth</span>, ctx.<span class="property">strokeStyle</span> = a.<span class="property">color</span>, ctx.<span class="title function_">stroke</span>(), ctx.<span class="property">globalAlpha</span> = <span class="number">1</span></span><br><span class="line">    &#125;, a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">renderParticule</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> t = <span class="number">0</span>; t &lt; e.<span class="property">animatables</span>.<span class="property">length</span>; t++) &#123;</span><br><span class="line">        e.<span class="property">animatables</span>[t].<span class="property">target</span>.<span class="title function_">draw</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">animateParticules</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> a = <span class="title function_">createCircle</span>(e, t), n = [], i = <span class="number">0</span>; i &lt; numberOfParticules; i++) &#123;</span><br><span class="line">        n.<span class="title function_">push</span>(<span class="title function_">createParticule</span>(e, t))</span><br><span class="line">    &#125;</span><br><span class="line">    anime.<span class="title function_">timeline</span>().<span class="title function_">add</span>(&#123;</span><br><span class="line">        <span class="attr">targets</span>: n, <span class="attr">x</span>: <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.<span class="property">endPos</span>.<span class="property">x</span></span><br><span class="line">        &#125;, <span class="attr">y</span>: <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.<span class="property">endPos</span>.<span class="property">y</span></span><br><span class="line">        &#125;, <span class="attr">radius</span>: <span class="number">0.1</span>, <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">1200</span>, <span class="number">1800</span>), <span class="attr">easing</span>: <span class="string">&quot;easeOutExpo&quot;</span>, <span class="attr">update</span>: renderParticule</span><br><span class="line">    &#125;).<span class="title function_">add</span>(&#123;</span><br><span class="line">        <span class="attr">targets</span>: a,</span><br><span class="line">        <span class="attr">radius</span>: anime.<span class="title function_">random</span>(<span class="number">80</span>, <span class="number">160</span>),</span><br><span class="line">        <span class="attr">lineWidth</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">alpha</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>, <span class="attr">easing</span>: <span class="string">&quot;linear&quot;</span>, <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">600</span>, <span class="number">800</span>)&#125;,</span><br><span class="line">        <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        <span class="attr">easing</span>: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        <span class="attr">update</span>: renderParticule,</span><br><span class="line">        <span class="attr">offset</span>: <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> n = <span class="variable language_">this</span>, i = <span class="variable language_">arguments</span>;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(a), a = <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            e.<span class="title function_">apply</span>(n, i)</span><br><span class="line">        &#125;, t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> canvasEl = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.fireworks&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvasEl) &#123;</span><br><span class="line">    <span class="keyword">var</span> ctx = canvasEl.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>), numberOfParticules = <span class="number">30</span>, pointerX = <span class="number">0</span>, pointerY = <span class="number">0</span>, tap = <span class="string">&quot;mousedown&quot;</span>, colors = [<span class="string">&quot;#FF1461&quot;</span>, <span class="string">&quot;#18FF92&quot;</span>, <span class="string">&quot;#5A87FF&quot;</span>, <span class="string">&quot;#FBF38C&quot;</span>], setCanvasSize = <span class="title function_">debounce</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        canvasEl.<span class="property">width</span> = <span class="number">2</span> * <span class="variable language_">window</span>.<span class="property">innerWidth</span>, canvasEl.<span class="property">height</span> = <span class="number">2</span> * <span class="variable language_">window</span>.<span class="property">innerHeight</span>, canvasEl.<span class="property">style</span>.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span> + <span class="string">&quot;px&quot;</span>, canvasEl.<span class="property">style</span>.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span> + <span class="string">&quot;px&quot;</span>, canvasEl.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>).<span class="title function_">scale</span>(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    &#125;, <span class="number">500</span>), render = <span class="title function_">anime</span>(&#123;</span><br><span class="line">        <span class="attr">duration</span>: <span class="number">1</span> / <span class="number">0</span>, <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvasEl.<span class="property">width</span>, canvasEl.<span class="property">height</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(tap, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">        <span class="string">&quot;sidebar&quot;</span> !== e.<span class="property">target</span>.<span class="property">id</span> &amp;&amp; <span class="string">&quot;toggle-sidebar&quot;</span> !== e.<span class="property">target</span>.<span class="property">id</span> &amp;&amp; <span class="string">&quot;A&quot;</span> !== e.<span class="property">target</span>.<span class="property">nodeName</span> &amp;&amp; <span class="string">&quot;IMG&quot;</span> !== e.<span class="property">target</span>.<span class="property">nodeName</span> &amp;&amp; (render.<span class="title function_">play</span>(), <span class="title function_">updateCoords</span>(e), <span class="title function_">animateParticules</span>(pointerX, pointerY))</span><br><span class="line">    &#125;, !<span class="number">1</span>), <span class="title function_">setCanvasSize</span>(), <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, setCanvasSize, !<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updateCoords</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    pointerX = (e.<span class="property">clientX</span> || e.<span class="property">touches</span>[<span class="number">0</span>].<span class="property">clientX</span>) - canvasEl.<span class="title function_">getBoundingClientRect</span>().<span class="property">left</span>, pointerY = e.<span class="property">clientY</span> || e.<span class="property">touches</span>[<span class="number">0</span>].<span class="property">clientY</span> - canvasEl.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setParticuleDirection</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> t = anime.<span class="title function_">random</span>(<span class="number">0</span>, <span class="number">360</span>) * <span class="title class_">Math</span>.<span class="property">PI</span> / <span class="number">180</span>, a = anime.<span class="title function_">random</span>(<span class="number">50</span>, <span class="number">180</span>), n = [-<span class="number">1</span>, <span class="number">1</span>][anime.<span class="title function_">random</span>(<span class="number">0</span>, <span class="number">1</span>)] * a;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">x</span>: e.<span class="property">x</span> + n * <span class="title class_">Math</span>.<span class="title function_">cos</span>(t), <span class="attr">y</span>: e.<span class="property">y</span> + n * <span class="title class_">Math</span>.<span class="title function_">sin</span>(t)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createParticule</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.<span class="property">x</span> = e, a.<span class="property">y</span> = t, a.<span class="property">color</span> = colors[anime.<span class="title function_">random</span>(<span class="number">0</span>, colors.<span class="property">length</span> - <span class="number">1</span>)], a.<span class="property">radius</span> = anime.<span class="title function_">random</span>(<span class="number">16</span>, <span class="number">32</span>), a.<span class="property">endPos</span> = <span class="title function_">setParticuleDirection</span>(a), a.<span class="property">draw</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">beginPath</span>(), ctx.<span class="title function_">arc</span>(a.<span class="property">x</span>, a.<span class="property">y</span>, a.<span class="property">radius</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>, !<span class="number">0</span>), ctx.<span class="property">fillStyle</span> = a.<span class="property">color</span>, ctx.<span class="title function_">fill</span>()</span><br><span class="line">    &#125;, a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createCircle</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.<span class="property">x</span> = e, a.<span class="property">y</span> = t, a.<span class="property">color</span> = <span class="string">&quot;#F00&quot;</span>, a.<span class="property">radius</span> = <span class="number">0.1</span>, a.<span class="property">alpha</span> = <span class="number">0.5</span>, a.<span class="property">lineWidth</span> = <span class="number">6</span>, a.<span class="property">draw</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="property">globalAlpha</span> = a.<span class="property">alpha</span>, ctx.<span class="title function_">beginPath</span>(), ctx.<span class="title function_">arc</span>(a.<span class="property">x</span>, a.<span class="property">y</span>, a.<span class="property">radius</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>, !<span class="number">0</span>), ctx.<span class="property">lineWidth</span> = a.<span class="property">lineWidth</span>, ctx.<span class="property">strokeStyle</span> = a.<span class="property">color</span>, ctx.<span class="title function_">stroke</span>(), ctx.<span class="property">globalAlpha</span> = <span class="number">1</span></span><br><span class="line">    &#125;, a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">renderParticule</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> t = <span class="number">0</span>; t &lt; e.<span class="property">animatables</span>.<span class="property">length</span>; t++) &#123;</span><br><span class="line">        e.<span class="property">animatables</span>[t].<span class="property">target</span>.<span class="title function_">draw</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">animateParticules</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> a = <span class="title function_">createCircle</span>(e, t), n = [], i = <span class="number">0</span>; i &lt; numberOfParticules; i++) &#123;</span><br><span class="line">        n.<span class="title function_">push</span>(<span class="title function_">createParticule</span>(e, t))</span><br><span class="line">    &#125;</span><br><span class="line">    anime.<span class="title function_">timeline</span>().<span class="title function_">add</span>(&#123;</span><br><span class="line">        <span class="attr">targets</span>: n, <span class="attr">x</span>: <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.<span class="property">endPos</span>.<span class="property">x</span></span><br><span class="line">        &#125;, <span class="attr">y</span>: <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.<span class="property">endPos</span>.<span class="property">y</span></span><br><span class="line">        &#125;, <span class="attr">radius</span>: <span class="number">0.1</span>, <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">1200</span>, <span class="number">1800</span>), <span class="attr">easing</span>: <span class="string">&quot;easeOutExpo&quot;</span>, <span class="attr">update</span>: renderParticule</span><br><span class="line">    &#125;).<span class="title function_">add</span>(&#123;</span><br><span class="line">        <span class="attr">targets</span>: a,</span><br><span class="line">        <span class="attr">radius</span>: anime.<span class="title function_">random</span>(<span class="number">80</span>, <span class="number">160</span>),</span><br><span class="line">        <span class="attr">lineWidth</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">alpha</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>, <span class="attr">easing</span>: <span class="string">&quot;linear&quot;</span>, <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">600</span>, <span class="number">800</span>)&#125;,</span><br><span class="line">        <span class="attr">duration</span>: anime.<span class="title function_">random</span>(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        <span class="attr">easing</span>: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        <span class="attr">update</span>: renderParticule,</span><br><span class="line">        <span class="attr">offset</span>: <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">e, t</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> n = <span class="variable language_">this</span>, i = <span class="variable language_">arguments</span>;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(a), a = <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            e.<span class="title function_">apply</span>(n, i)</span><br><span class="line">        &#125;, t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> canvasEl = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.fireworks&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvasEl) &#123;</span><br><span class="line">    <span class="keyword">var</span> ctx = canvasEl.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>), numberOfParticules = <span class="number">30</span>, pointerX = <span class="number">0</span>, pointerY = <span class="number">0</span>, tap = <span class="string">&quot;mousedown&quot;</span>, colors = [<span class="string">&quot;#FF1461&quot;</span>, <span class="string">&quot;#18FF92&quot;</span>, <span class="string">&quot;#5A87FF&quot;</span>, <span class="string">&quot;#FBF38C&quot;</span>], setCanvasSize = <span class="title function_">debounce</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        canvasEl.<span class="property">width</span> = <span class="number">2</span> * <span class="variable language_">window</span>.<span class="property">innerWidth</span>, canvasEl.<span class="property">height</span> = <span class="number">2</span> * <span class="variable language_">window</span>.<span class="property">innerHeight</span>, canvasEl.<span class="property">style</span>.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span> + <span class="string">&quot;px&quot;</span>, canvasEl.<span class="property">style</span>.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span> + <span class="string">&quot;px&quot;</span>, canvasEl.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>).<span class="title function_">scale</span>(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    &#125;, <span class="number">500</span>), render = <span class="title function_">anime</span>(&#123;</span><br><span class="line">        <span class="attr">duration</span>: <span class="number">1</span> / <span class="number">0</span>, <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvasEl.<span class="property">width</span>, canvasEl.<span class="property">height</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(tap, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">        <span class="string">&quot;sidebar&quot;</span> !== e.<span class="property">target</span>.<span class="property">id</span> &amp;&amp; <span class="string">&quot;toggle-sidebar&quot;</span> !== e.<span class="property">target</span>.<span class="property">id</span> &amp;&amp; <span class="string">&quot;A&quot;</span> !== e.<span class="property">target</span>.<span class="property">nodeName</span> &amp;&amp; <span class="string">&quot;IMG&quot;</span> !== e.<span class="property">target</span>.<span class="property">nodeName</span> &amp;&amp; (render.<span class="title function_">play</span>(), <span class="title function_">updateCoords</span>(e), <span class="title function_">animateParticules</span>(pointerX, pointerY))</span><br><span class="line">    &#125;, !<span class="number">1</span>), <span class="title function_">setCanvasSize</span>(), <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, setCanvasSize, !<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>themes/next/layout/_layout.swig</code> 在 <code>&lt;/body&gt;</code> 上面写下如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">fireworks</span> %&#125;</span><br><span class="line">   &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/js/src/fireworks.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打开主题配置文件，在里面最后写下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fireworks</span></span><br><span class="line"><span class="attr">fireworks:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Jaron Chim 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Jaron Chim 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># 搭建博客</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/03/17/Hexo-build-blog/" rel="prev" title="Hexo搭建个人博客">
+                  <i class="fa fa-angle-left"></i> Hexo搭建个人博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/05/31/Hibernate%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6hibernate-cfg-xml%E5%92%8C-hbm-xml%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A/" rel="next" title="Hibernate配置文件hibernate.cfg.xml和.hbm.xml的详细解释">
+                  Hibernate配置文件hibernate.cfg.xml和.hbm.xml的详细解释 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备18157056号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2016 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Jaron Chim</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

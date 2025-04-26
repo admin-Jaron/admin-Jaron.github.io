@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-flat-top.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tryhub.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="快速安装指南在本节中，我们将进行简单快速的Rancher安装，即在一台Linux机器上安装Rancher，并使其能够完成所有Rancher必要功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rancher 1.6 快速安装指南">
+<meta property="og:url" content="https://tryhub.top/2021/12/11/Rancher-1-6-%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="奇姆的博客">
+<meta property="og:description" content="快速安装指南在本节中，我们将进行简单快速的Rancher安装，即在一台Linux机器上安装Rancher，并使其能够完成所有Rancher必要功能。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-11T12:07:48.000Z">
+<meta property="article:modified_time" content="2021-12-11T12:55:12.540Z">
+<meta property="article:author" content="Jaron Chim">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="rancher">
+<meta property="article:tag" content="容器编排">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tryhub.top/2021/12/11/Rancher-1-6-%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tryhub.top/2021/12/11/Rancher-1-6-%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/","path":"2021/12/11/Rancher-1-6-快速安装指南/","title":"Rancher 1.6 快速安装指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Rancher 1.6 快速安装指南 | 奇姆的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?1ad13b7aff8bfe9206fa7e12d5c4a4f0"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/bookmark.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">奇姆的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">快速安装指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87LINUX%E4%B8%BB%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">准备LINUX主机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RANCHER-SERVER%E6%A0%87%E7%AD%BE"><span class="nav-number">1.2.</span> <span class="nav-text">RANCHER SERVER标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8RANCHER-SERVER"><span class="nav-number">1.3.</span> <span class="nav-text">启动RANCHER SERVER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%BB%E6%9C%BA"><span class="nav-number">1.4.</span> <span class="nav-text">添加主机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.5.</span> <span class="nav-text">基础设施服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87UI%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8"><span class="nav-number">1.6.</span> <span class="nav-text">通过UI创建一个容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87DOCKER%E5%8E%9F%E7%94%9FCLI%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8"><span class="nav-number">1.7.</span> <span class="nav-text">通过DOCKER原生CLI创建一个容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%A4%9A%E5%AE%B9%E5%99%A8%E5%BA%94%E7%94%A8"><span class="nav-number">1.8.</span> <span class="nav-text">创建一个多容器应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8RANCHER-CLI%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%A4%9A%E5%AE%B9%E5%99%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.9.</span> <span class="nav-text">使用RANCHER CLI创建一个多容器应用程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOCKER-COMPOSE-YML%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.9.1.</span> <span class="nav-text">DOCKER-COMPOSE.YML示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RANCHER-COMPOSE-YML%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.9.2.</span> <span class="nav-text">RANCHER-COMPOSE.YML示例</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jaron Chim"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Jaron Chim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">144</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/admin-Jaron" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;admin-Jaron" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tryhub@tryhub.cn" title="E-Mail → mailto:tryhub@tryhub.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tryhub.top/2021/12/11/Rancher-1-6-%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jaron Chim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奇姆的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Rancher 1.6 快速安装指南 | 奇姆的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Rancher 1.6 快速安装指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-11 20:07:48 / 修改时间：20:55:12" itemprop="dateCreated datePublished" datetime="2021-12-11T20:07:48+08:00">2021-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/docker/rancher/" itemprop="url" rel="index"><span itemprop="name">rancher</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="快速安装指南"><a href="#快速安装指南" class="headerlink" title="快速安装指南"></a><a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/">快速安装指南</a></h2><p>在本节中，我们将进行简单快速的Rancher安装，即在一台Linux机器上安装Rancher，并使其能够完成所有Rancher必要功能。</p>
+<span id="more"></span>
+
+<h3 id="准备LINUX主机"><a href="#准备LINUX主机" class="headerlink" title="准备LINUX主机"></a>准备LINUX主机</h3><p>先安装一个64位的Ubuntu 16.04 Linux主机，其内核必须高于3.10。你可以使用笔记本、虚拟机或物理服务器。请确保该Linux主机内存不低于1GB。在该主机上安装 <a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/hosts/#docker%E7%89%88%E6%9C%AC%E9%80%82%E7%94%A8%E5%AF%B9%E6%AF%94">支持的Docker版本</a>。</p>
+<p>在主机上安装Docker的方法请参照<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/installation/linux/ubuntulinux/">Docker</a>网站的安装说明。</p>
+<blockquote>
+<p><strong>注意：</strong><br>目前Rancher尚不支持Docker for Windows以及Docker for Mac。</p>
+</blockquote>
+<h3 id="RANCHER-SERVER标签"><a href="#RANCHER-SERVER标签" class="headerlink" title="RANCHER SERVER标签"></a>RANCHER SERVER标签</h3><p>Rancher Server当前版本中有2个不同的标签。对于每一个主要的release标签，我们都会提供对应版本的文档。</p>
+<ul>
+<li><p><code>rancher/server:latest</code> 此标签是我们的最新一次开发的构建版本。这些构建已经被我们的CI框架自动验证测试。但这些release并不代表可以在生产环境部署。</p>
+</li>
+<li><p><code>rancher/server:stable</code> 此标签是我们最新一个稳定的release构建。这个标签代表我们推荐在生产环境中使用的版本。</p>
+</li>
+</ul>
+<p>请不要使用任何带有 <code>rc&#123;n&#125;</code> 前缀的release。这些构建都是Rancher团队的测试构建。</p>
+<h3 id="启动RANCHER-SERVER"><a href="#启动RANCHER-SERVER" class="headerlink" title="启动RANCHER SERVER"></a>启动RANCHER SERVER</h3><p>你只需要一条命令就可以启动Rancher Server。当Rancher Server容器启动以后，我们将能查看到相关的日志。</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker <span class="keyword">run</span><span class="language-bash"> -d --restart=unless-stopped -p 8080:8080 rancher/server:stable</span></span><br><span class="line"><span class="comment"># Tail the logs to show Rancher</span></span><br><span class="line">$ sudo docker logs -f &lt;CONTAINER_ID&gt;</span><br></pre></td></tr></table></figure>
+<p>启动Rancher Server只需要几分钟时间。当日志中显示 <code>.... Startup Succeeded, Listening on port...</code>的时候，Rancher UI就能正常访问了。配置一旦完成，这行日志就会立刻出现。需要注意的是，这一输出之后也许还会有其他日志，因此，在初始化过程中这不一定是最后一行日志。</p>
+<p>Rancher UI的默认端口是 <code>8080</code>。所以为了访问UI，需打开<code>http://&lt;SERVER_IP&gt;:8080</code>。需要注意的事，如果你的浏览器和Rancher Server是运行在同一主机上的，你需要通过主机的<strong>真实IP地址</strong>访问，比如 <code>http://192.168.1.100:8080</code> ，而不是 <code>http://localhost:8080</code> 或<code>http://127.0.0.1:8080</code>，以防在添加主机的时候使用了不可达的IP而出现问题。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<ol>
+<li>初始安装时Rancher的访问控制并未配置，任何能够访问你的IP地址的人，都可以访问你的UI和API。我们建议你配置 <a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/configuration/access-control/">访问控制</a>. </li>
+<li>国内的公有云主机，如果需要使用80和8080端口，需备案后才可以使用。</li>
+</ol>
+</blockquote>
+<h3 id="添加主机"><a href="#添加主机" class="headerlink" title="添加主机"></a>添加主机</h3><p>在这里，为了简化操作，我们将添加运行着Rancher Server的主机为Rancher内的主机。在实际的生产环境中，请使用专用的主机来运行Rancher Server。</p>
+<p>想要添加主机，首先你需要进入UI界面，点击<strong>基础架构</strong>，然后你将看到<strong>主机</strong>界面。点击<strong>添加主机</strong>，Rancher将提示你选择主机注册URL。这个URL是Rancher Server运行所在的URL，且它必须可以被所有你要添加的主机访问到——当Rancher Server会通过NAT防火墙或负载均衡器被暴露至互联网时，这一设定就非常重要了。如果你的主机有一个私有或本地的IP地址，比如 <code>192.168.*.*</code>，Rancher将提示一个警告信息，提醒你务必确保这个URL可以被主机访问到。</p>
+<p>因为我们现在只会添加Rancher Server主机自身，你可以暂时忽略这些警告。点击<strong>保存</strong>。默认选择<strong>自定义</strong>选项，你将得到运行Rancher agent容器的Docker命令。这里还有其他的公有云的选项，使用这些选项，Rancher可以使用Docker Machine来启动主机。</p>
+<p>Rancher UI会给你提供一些指示，比如你的主机上应该开放的端口，还有其他一些可供选择的信息。鉴于我们现在添加的是Rancher Server运行的主机，我们需要添加这个主机所使用的公网IP。页面上的一个选项提供输入此IP的功能，此选项会自动更新Docker命令中的环境变量参数以保证正确。</p>
+<p>然后请在运行Rancher Server的主机上运行这个命令。</p>
+<p>当你在Rancher UI上点击<strong>关闭</strong>按钮时，你会被返回到<strong>基础架构-&gt;主机</strong>界面。一两分钟之后，主机会自动出现在这里。</p>
+<h3 id="基础设施服务"><a href="#基础设施服务" class="headerlink" title="基础设施服务"></a>基础设施服务</h3><p>当你第一次登陆Rancher时，你将自动进入<strong>默认</strong><a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/environments/">环境</a>。默认已经为此环境选择了Cattle<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/environments/#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83%E6%A8%A1%E7%89%88">环境模板</a>来启动<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/rancher-services/">基础设施服务</a>。要想充分利用Rancher的一些功能，如<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/rancher-services/dns-service/">DNS</a>、<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/rancher-services/metadata-service">元数据</a>、<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/rancher-services/networking">网络</a>、<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/cattle/health-checks/">健康检查</a>，你需要启动这些基础设施服务。这些基础设施可以在<strong>应用栈</strong> -&gt; <strong>基础设施</strong>中找到。在主机被添加至Rancher之前，这些栈会处于 <code>unhealthy</code> 状态。主机添加完成后，建议等到所有基础设施服务都处于<code>active</code>状态之后再添加服务。</p>
+<p>在主机上，所有属于基础设施服务的容器将被隐藏，除非你单击“<strong>显示系统容器</strong>”复选框。</p>
+<h3 id="通过UI创建一个容器"><a href="#通过UI创建一个容器" class="headerlink" title="通过UI创建一个容器"></a>通过UI创建一个容器</h3><p>导航到<strong>应用</strong>页面，如果你看到了欢迎屏幕，可以在欢迎屏幕中单击<strong>定义服务</strong>的按钮。如果你的Rancher设置中已有服务，你可以在任何现有应用中点击<strong>添加服务</strong>，或者创建一个新的应用来添加服务。应用只是将服务组合在一起的便捷方式。 如果需要创建新的应用，请单击<strong>添加应用</strong>，填写名称和描述，然后单击<strong>创建</strong>。 接着，在新的应用中单击<strong>添加服务</strong>。</p>
+<p>给服务取个名字，比如“第一个服务”。你可以使用我们的默认设置，然后单击<strong>创建</strong>。Rancher将开始在主机上启动容器。不论你的主机IP地址是什么，<em>第一个容器</em>的IP地址都将在 <code>10.42.*.*</code> 的范围内，因为Rancher已使用<code>ipsec</code>基础设施服务创建了一个托管网络。各容器之间是通过这个托管网络进行跨主机通信的。</p>
+<p>如果你单击<em>第一个容器</em>的下拉列表，你将可以进行各种管理操作，如停止容器、查看日志或访问容器控制台。</p>
+<h3 id="通过DOCKER原生CLI创建一个容器"><a href="#通过DOCKER原生CLI创建一个容器" class="headerlink" title="通过DOCKER原生CLI创建一个容器"></a>通过DOCKER原生CLI创建一个容器</h3><p>Rancher会显示主机之上的所有容器，即使有些容器是在UI之外创建的。在主机的shell终端中创建一个容器。</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -d -it --name=second-container ubuntu:14.04.2</span></span><br></pre></td></tr></table></figure>
+
+<p>在UI中，你将看到<em>第二个容器</em>在你的主机上出现！</p>
+<p>Rancher会对Docker守护进程中发生的事件做出反应，调整自己以反映现实情况。你可以在此了解更多通过Docker原生CLI使用Rancher的事宜。</p>
+<p>如果你查看<em>第二个容器</em>的IP地址，你将发现它不在<code>10.42.*.*</code> 范围内。它的IP地址是Docker守护进程分配的常用IP地址。这是通过CLI创建Docker容器的预期行为。</p>
+<p>如果我们想通过CLI创建一个Docker容器，但仍希望它使用Rancher托管网络的IP地址，该怎么做呢？我们只需要在命令中添加一个标签(<code>io.rancher.container.network=true</code>)，让Rancher知道你希望此容器成为<code>托管</code>网络的一部分。</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -d -it --label io.rancher.container.network=<span class="literal">true</span> ubuntu:14.04.2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建一个多容器应用"><a href="#创建一个多容器应用" class="headerlink" title="创建一个多容器应用"></a>创建一个多容器应用</h3><p>上文中我们已经介绍了如何创建单个容器以及这些单个容器之间如何进行跨主机网络通信。然而，现实情况中，大多数应用程序其实是由多个服务构成的，而每个服务又是由多个容器构成的。比如说，一个<a target="_blank" rel="noopener" href="http://sdelements.github.io/lets-chat/">LetsChat</a>应用程序，就是由下列几项服务构成的：</p>
+<blockquote>
+<ol>
+<li>一个负载均衡器。负载均衡器把Internet流量转发给“LetsChat”应用程序。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>一个由两个“LetsChat”容器组成的web服务。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>一个由一个“Mongo”容器组成的数据库服务。</li>
+</ol>
+</blockquote>
+<p>负载均衡器的目标是<em>web</em>服务（即LetsChat），Web服务将连接到数据库服务（即Mongo）。</p>
+<p>在本节中，我们将介绍如何在Rancher中创建和部署<a target="_blank" rel="noopener" href="http://sdelements.github.io/lets-chat/">LetsChat</a>应用程序。</p>
+<p>导航到<strong>应用</strong>页面，如果你看到了欢迎屏幕，可以在欢迎屏幕中单击<strong>定义服务</strong>的按钮。 如果你的Rancher设置中已有服务，你可以在任何现有应用中点击<strong>添加应用</strong>，来创建一个新的应用。填写名称和描述，然后单击<strong>创建</strong>。 接着，在新的应用中单击<strong>添加服务</strong>。</p>
+<p>首先，我们将创建一个名为<code>database</code>的数据库服务，并使用<code>mongo</code>镜像。单击<strong>创建</strong>。你将立即被带到应用页面，页面中将包含新创建的数据库服务。</p>
+<p>接下来，再次点击<strong>添加服务</strong>以添加其他服务。我们将添加一个LetsChat服务并链接到<em>database</em>服务。让我们使用名称<code>web</code>以及<code>sdelements/lets-chat</code>镜像。在UI中，我们可以移动滑块，将服务扩容至2个容器。在<strong>服务链接</strong>中，添加<em>database</em>服务并将其命名为<code>mongo</code>。就像Docker的做法一样，Rancher会在<code>letschat</code>容器里加入这个链接所需要的相关环境变量。单击<strong>创建</strong>。</p>
+<p>最后，我们将创建我们的负载均衡器。单击<strong>添加服务</strong>按钮旁的下拉菜单图标。选择<strong>添加负载均衡</strong>。提供一个类似于<code>letschatapplb</code>这样的名字。输入访问端口（例如<code>80</code>端口），选择目标服务（即<em>web</em>），并选择目标端口（即<code>8080</code>端口）。<em>web</em>服务正在侦听<code>8080</code>端口。单击<strong>创建</strong>。</p>
+<p>至此，我们的LetsChat应用程序已完成！在<strong>应用</strong>页面上，你可以查找到超链接形式的负载均衡所暴露端口。点击该链接，将会打开一个新的页面，你将能看到LetsChat应用程序了。</p>
+<h3 id="使用RANCHER-CLI创建一个多容器应用程序"><a href="#使用RANCHER-CLI创建一个多容器应用程序" class="headerlink" title="使用RANCHER CLI创建一个多容器应用程序"></a>使用RANCHER CLI创建一个多容器应用程序</h3><p>在本节中，我们将介绍如何使用我们的命名行工具<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/zh/cli/">Rancher CLI</a>创建和部署跟上一节中我们创建的一样的<a target="_blank" rel="noopener" href="http://sdelements.github.io/lets-chat/">LetsChat</a>应用程序。</p>
+<p>当在Rancher中创建服务时，Rancher CLI工具与颇受欢迎的Docker Compose工具的工作方式类似。 它接收相同的<code>docker-compose.yml</code>文件，并在Rancher上部署应用程序。 你可以在<code>rancher-compose.yml</code>文件中指定更多的属性，该文件将扩展并覆盖<code>docker-compose.yml</code>文件。</p>
+<p>在上一节中，我们创建了一个具有一个负载均衡器的LetsChat应用程序。如果你已经在Rancher中创建了它，你可以直接在UI中下载这些文件，只需在应用的下拉菜单中选择<strong>导出配置</strong>即可。<code>docker-compose.yml</code>文件与 <code>rancher-compose.yml</code> 文件与下方示例类似：</p>
+<h4 id="DOCKER-COMPOSE-YML示例"><a href="#DOCKER-COMPOSE-YML示例" class="headerlink" title="DOCKER-COMPOSE.YML示例"></a>DOCKER-COMPOSE.YML示例</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">letschatapplb:</span></span><br><span class="line">    <span class="comment">#If you only have 1 host and also created the host in the UI,</span></span><br><span class="line">    <span class="comment"># you may have to change the port exposed on the host.</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">80</span><span class="string">:80/tcp</span></span><br><span class="line">    <span class="attr">labels:</span></span><br><span class="line">      <span class="attr">io.rancher.container.create_agent:</span> <span class="string">&#x27;true&#x27;</span></span><br><span class="line">      <span class="attr">io.rancher.container.agent.role:</span> <span class="string">environmentAdmin</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">rancher/lb-service-haproxy:v0.4.2</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">labels:</span></span><br><span class="line">      <span class="attr">io.rancher.container.pull_image:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">sdelements/lets-chat</span></span><br><span class="line">    <span class="attr">links:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">database:mongo</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">database:</span></span><br><span class="line">    <span class="attr">labels:</span></span><br><span class="line">      <span class="attr">io.rancher.container.pull_image:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mongo</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="RANCHER-COMPOSE-YML示例"><a href="#RANCHER-COMPOSE-YML示例" class="headerlink" title="RANCHER-COMPOSE.YML示例"></a>RANCHER-COMPOSE.YML示例</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">letschatapplb:</span></span><br><span class="line">    <span class="attr">scale:</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">lb_config:</span></span><br><span class="line">      <span class="attr">certs:</span> []</span><br><span class="line">      <span class="attr">port_rules:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">hostname:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="attr">priority:</span> <span class="number">1</span></span><br><span class="line">        <span class="attr">protocol:</span> <span class="string">http</span></span><br><span class="line">        <span class="attr">service:</span> <span class="string">web</span></span><br><span class="line">        <span class="attr">source_port:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">target_port:</span> <span class="number">8080</span></span><br><span class="line">    <span class="attr">health_check:</span></span><br><span class="line">      <span class="attr">port:</span> <span class="number">42</span></span><br><span class="line">      <span class="attr">interval:</span> <span class="number">2000</span></span><br><span class="line">      <span class="attr">unhealthy_threshold:</span> <span class="number">3</span></span><br><span class="line">      <span class="attr">healthy_threshold:</span> <span class="number">2</span></span><br><span class="line">      <span class="attr">response_timeout:</span> <span class="number">2000</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">scale:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">database:</span></span><br><span class="line">    <span class="attr">scale:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>在Rancher UI中单击<strong>下载CLI</strong>（该按钮位于页面的右下角），即可下载Rancher CLI二进制文件，Windows、Mac和Linux的二进制文件均可下载。</p>
+<p>若想使用Rancher CLI在Rancher中启动服务，你需要设置一些环境变量。你需要在Rancher UI中创建一个账户<a target="_blank" rel="noopener" href="https://rancher.com/docs/rancher/v1.6/en/api/v2-beta/api-keys/">API Key</a>。单击<strong>API</strong> -&gt; <strong>密钥</strong>。单击<strong>添加账户API Key</strong>。填写一个名字，然后单击<strong>创建</strong>。保存<strong>Access Key（用户名）<strong>和</strong>Secret Key（密码）</strong>。通过运行<code>rancher config</code>配置RancherCLI，使用Rancher URL、Access Key和Secret Key。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Configure Rancher CLI</span></span><br><span class="line">$ rancher config</span><br><span class="line"><span class="comment"># Set the Rancher URL</span></span><br><span class="line">URL []: http://&lt;SERVER_IP&gt;:8080/</span><br><span class="line"><span class="comment"># Set the access key, i.e. username</span></span><br><span class="line">Access Key []: &lt;accessKey_of_account_api_key&gt;</span><br><span class="line"><span class="comment"># Set the secret key, i.e. password</span></span><br><span class="line">Secret Key []:  &lt;secretKey_of_account_api_key&gt;</span><br></pre></td></tr></table></figure>
+
+<p>现在进入保存了<code>docker-compose.yml</code>和<code>rancher-compose.yml</code> 文件的目录中，运行下面这个命令。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rancher up -d -s NewLetsChatApp</span><br></pre></td></tr></table></figure>
+
+<p>在Rancher中，一个叫做<strong>NewLetsChatApp</strong>的应用将被创建，且所有服务都将在Rancher中运行起来。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Jaron Chim 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Jaron Chim 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/docker/" rel="tag"># docker</a>
+              <a href="/tags/rancher/" rel="tag"># rancher</a>
+              <a href="/tags/%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92/" rel="tag"># 容器编排</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/09/Docker%E5%B0%86%E9%95%9C%E5%83%8F%E6%8E%A8%E9%80%81%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91DockerRegistry/" rel="prev" title="Docker将镜像推送到阿里云DockerRegistry">
+                  <i class="fa fa-angle-left"></i> Docker将镜像推送到阿里云DockerRegistry
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/08/CentOS-7-%E5%8D%87%E7%BA%A7-Linux-%E5%86%85%E6%A0%B8/" rel="next" title="CentOS 7 升级 Linux 内核">
+                  CentOS 7 升级 Linux 内核 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备18157056号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2016 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Jaron Chim</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
